@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+    <title>
+     Solution 12-5: Using the ARIA project 
+    </title>
+
+
+    </head>
+<body>
+
+<div role="banner">
+
+<a href="http://www.comtaste.com"><img src="http://www.comtaste.com/images/logo_comtaste.png" 
+title="Comtaste Logo" alt="Comtaste" /></a>
+
+</div>
+
+<div role="application"> 
+
+  <h3 id="radio_btn">Choose your favorite movie:</h3> 
+
+  <ul class="radiogroup" 
+      id="rg1" 
+      role="radiogroup" 
+      aria-labelledby="radio_btn">
+      
+    <li id="r1" 
+      tabindex="1" 
+      role="radio" 
+      aria-checked="false"> 
+      Matrix
+    </li> 
+    <li id="r2" 
+        tabindex="2" 
+        role="radio" 
+        aria-checked="false"> 
+      Inception
+    </li> 
+    <li id="r3" 
+        tabindex="3" 
+        role="radio" 
+        aria-checked="false"> 
+     Avatar
+    </li> 
+    <li id="r4" 
+        tabindex="5" 
+        role="radio" 
+        aria-checked="true"> 
+     Blade Runner
+    </li> 
+    <li id="r5" 
+        tabindex="4" 
+        role="radio" 
+        aria-checked="false"> 
+     The silent of the lambs
+    </li>   
+  </ul> 
+  </div>
+    </body>
+
+</html>
+

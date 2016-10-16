@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+     <script type='text/javascript'>
+	 
+	  window.addEventListener("load", init, false);
+	
+	 function init() {
+            
+				
+var myList = document.getElementById ('msgList');
+
+function msgHandler (message)
+{
+var elementLI = document.createElement ('li');
+                 
+elementLI.innerHTML = message;
+                    
+if (myList.children.length)
+{
+myList.insertBefore (elementLI, myList.firstChild);
+}
+else
+{
+myList.appendChild (elementLI);
+}
+                    
+for (var i = 10, j = myList.children.length; i < j; i++)
+{
+myList.removeChild (myList.children [i]);
+}
+}
+				
+
+if (typeof (window.EventSource) !== 'undefined')
+{
+var source = new EventSource ('sse.php');
+
+                    
+source.onmessage = function (event)
+{
+                        var msgSplit = event.data.split ('\n');
+                        if (msgSplit.length == 2) {
+                            msgHandler ('<a target="_blank" href="mailto:' + msgSplit [1] + '/">' + msgSplit [0] + '</a>');
+                            return ;
+                        } 
+                        else if (msgSplit.length == 3) {
+                            msgHandler ('<a target="_blank" href="mailto:' + msgSplit [1] + '" title="' + msgSplit [2] + '"/">' + msgSplit [0] + '</a>');
+                            return ;
+                        }
+                        
+                        msgHandler (event.data);
+                    };
+                }
+                else
+                {
+                    msgHandler ('Your browser does not support the EventSource Interface');
+                }
+				
+};
+          
+          </script> 
+   
+  </head>
+  <body>
+    <h2>Messages sent from the Server</h2> 
+          <ul id="msgList"> 
+          
+          </ul> 
+  </body>
+</html>

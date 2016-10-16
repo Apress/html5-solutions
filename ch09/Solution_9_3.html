@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+     <title>Solution 9-3: Handling websocket events</title>
+    <script type="text/javascript">
+	
+	window.addEventListener("load", init, false);
+	
+	function init()
+	{
+		
+		document.getElementById ('socketBtn').addEventListener('click', establishSocket,true);
+		
+	}
+	
+	function establishSocket()
+	{
+		
+		if ("WebSocket" in window)
+        {
+          alert("WebSocket is supported by your Browser!");
+    
+          var ws = new WebSocket("ws://localhost/echo");
+		  
+		   ws.onopen = function()
+     {
+        
+        ws.send("Message to send");
+        alert("Socket connection established. The Message is being  sent...");
+     };
+	 
+     ws.onmessage = function (evt) 
+     { 
+        var received_msg = evt.data;
+        alert("Message is received...");
+     };
+     ws.onclose = function()
+     { 
+        
+        alert("Socket connection is being closed..."); 
+     };
+	 
+	 ws.onerror = function(evt)
+	 {
+		 //  check to see if the readyState attribute's value is OPEN (1) or CLOSING (2), and if so, fire a simple event named error at the WebSocket object.
+		alert ('The following error occurred: ' + error);
+	 }
+		  
+        } else {
+     
+     alert("WebSocket is not supported by your browser!");
+  }
+	 
+	}
+    
+ </script>
+</head>
+<body>
+ <h2>Solution 9-3: Handling websocket events   </h2> 
+ 
+<p>  <button id="socketBtn"> Create a WebSocket Connection </button></p>
+ 
+</div>
+</body>
+</html>
+
+

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+   <title>Solution 8-2 </title>
+     <script type='text/javascript'>
+window.addEventListener("load", init, true);
+window.addEventListener("message", msgHandler, true);
+
+var output = document.getElementById("result");
+
+var targetURL = 'http://www.comtaste.com';
+
+function init()
+{
+	
+	document.getElementById('sendBtn').addEventListener("click", sendMsg, true);
+	
+}
+
+function sendMsg()
+{
+	document.getElementById('chatFrame').contentWindow.postMessage(document.getElementById('message').value, targetURL);
+}
+
+function msgHandler(e)
+{
+	if (e.origin == targetURL)
+	{
+		
+		document.getElementById('message').value = e.data;
+		
+	} else {
+		alert('This message has been sent from an unknown domain: ' + e.origin);
+	}
+	
+}
+
+                    
+
+</script> 
+   
+  </head>
+  <body>
+    <h2>Solution 8-2</h2> 
+          Click on the button to send a message to the iFrame below: 
+          <button id="sendBtn"> Send Message </button>
+          
+          <p>This is the message:
+          <input type="text" id="message" value="This message is contained within the main window" style="width: 350px" />
+          </p>
+     <br />     
+   <p>       <iframe id="chatFrame" src="http://www.comtaste.com/demo/chatIframe.html" style="height:480px; width:640px" />
+      </p>    
+  </body>
+</html>
+

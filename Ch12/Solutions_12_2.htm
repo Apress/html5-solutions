@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+    <title>
+     Solution 12-2: Creating accessible tabular data
+    </title>
+
+<link href="table.css" rel="stylesheet" />
+
+    </head>
+<body>
+
+<table summary="Last season records">
+<caption>
+  <strong>List of teams and their records</strong>
+  <p>This is a collection of the latest results in 2010</p>
+ </caption>
+ <thead>
+ <tr>
+    <th id="year">Year</th>
+    <th id="team">Team</th>
+    <th id="record" abbr="Record">Current Year Record</th>
+  </tr>
+  
+  <tbody>
+  <tr>
+   <td headers="year">1915</td>
+
+     <td headers="team">Philadelphia Phillies</td>
+
+     <td headers="record">101-50</td>
+
+  </tr>
+  <tr>
+    <td headers="year">1916</td>
+
+     <td headers="team">Brooklyn Robins</td>
+
+     <td headers="record">91-63</td>
+
+  </tr>
+  <tr>
+       <td headers="year">1915</td>
+
+     <td headers="team">Philadelphia Phillies</td>
+
+     <td headers="record">101-50</td>
+  </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+/* CSS Document */
+
+table {
+border-top: 1px solid #999;
+border-left: 1px solid #999;
+
+border-collapse:collapse;
+}
+
+
+
+th, td {
+
+padding: 5px;
+border-right: 1px solid #999;
+border-bottom: 1px solid #999;
+
+
+
+}
+
+caption {
+font-family:Geneva, Arial, Helvetica, sans-serif;
+color:#993333;
+padding-bottom: 5px;
+}
+
+th {
+background-color:#cccccc;
+font-family:"Courier New", Courier, mono;
+}

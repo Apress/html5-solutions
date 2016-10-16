@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+   <title>Solution 8-6: Checking for the XMLHttpRequest Level 2 cross-origin browser support </title>
+     <script type='text/javascript'>
+      function init()
+	  {
+	  var output = document.getElementById("result");
+	  var xhr = new XMLHttpRequest();
+	          
+if (typeof xhr.withCredentials != 'undefined')
+{
+ output.value += " Your browser supports the XMLHttpRequest Level 2 and its cross-origin feature !";
+  } else {
+    output.value += " Cross-origin XMLHttpRequest is not supported by your browser.";
+  }
+	  }
+	  
+	  window.addEventListener("load", init, false);
+</script> 
+   
+  </head>
+  <body>
+    <h2>Solution 8-6: Checking for the XMLHttpRequest Level 2 cross-origin browser support </h2> 
+    
+    <output name="result" id="result"> This is the output: </output>
+          
+  </body>
+</html>
+

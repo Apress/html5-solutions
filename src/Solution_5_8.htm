@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+     Solution 5-8:  Full-screen video 
+    </title> 
+
+
+ 
+<script type="text/javascript">
+var video;
+
+window.onload = function()
+{
+    video = document.getElementById("myVideo");
+    
+    btn_fullscreen.addEventListener("click", forceFullScreen, false);
+    
+    video.addEventListener("loadedmetadata", makeVisible, false);
+}
+ 
+function makeVisible()
+{
+    if (video.webkitSupportsFullscreen) 
+    {
+        document.getElementById("btn_fullscreen").style.visibility="visible";
+    }
+}
+ 
+function forceFullScreen() {
+        video.webkitEnterFullscreen();
+}
+
+</script>
+ 
+</head>
+<body>
+
+ 
+ <div id="video_container">
+
+<video width="320" height="176"  src="movie.mp4" id="myVideo" autoplay  />
+
+</div>
+    
+    
+     <br/>
+     
+     <button type="button" id="btn_fullscreen"  style="visibility:hidden">
+     Go Fullscreen
+     </button>
+ 
+</body>
+</html>

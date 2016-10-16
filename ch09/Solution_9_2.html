@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+     <title>Solution 9-2: Establishing a websocket connection</title>
+    <script type="text/javascript">
+	
+	window.addEventListener("load", init, false);
+	
+	function init()
+	{
+		
+		document.getElementById ('socketBtn').addEventListener('click', establishSocket,true);
+		
+	}
+	
+	function establishSocket()
+	{
+		
+		if ("WebSocket" in window)
+        {
+          alert("WebSocket is supported by your Browser and the connection is being created!");
+    
+          var ws = new WebSocket("ws://localhost/echo");
+	
+		  
+        } else {
+     
+     alert("WebSocket is not supported by your browser!");
+  }
+	 
+	}
+    
+ </script>
+</head>
+<body>
+ <h2>Solution 9-2: Establishing a websocket connection</h2> 
+ 
+ <p>  <button id="socketBtn"> Create a WebSocket Connection </button></p>
+ 
+</div>
+</body>
+</html>
+
+

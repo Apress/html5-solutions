@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+   <title>Solution 8-5: Using XMLHttpRequest Level 2  </title>
+     <script>
+
+function sendForm() {
+  var output = document.getElementById("result");
+  
+  var data = new FormData(document.getElementById("fileinfo"))
+  
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "uploadImage.php", false)
+  xhr.send(data);
+  if (xhr.status == 200) {
+    output.value += "Uploaded!";
+  } else {
+    output.value += "Error " + xhr.status + " occurred uploading your file.<br />";
+  }
+}
+
+</script> 
+   
+  </head>
+  <body>
+   
+   <form enctype="multipart/form-data" method="post">
+ 
+  <label>Select a file to upload:</label>
+  <input type="file" name="myFile" id="myFile" required>
+</form>
+
+<output name="result" id="result" />
+
+<a href="javascript:sendForm()">Upload File</a>
+
+          
+  </body>
+</html>
+

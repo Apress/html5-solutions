@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+     <title>Solution 9-4: Handling websocket events</title> 
+     
+    <script type="text/javascript">
+	
+	var ws;
+	
+	window.addEventListener("load", init, false);
+	
+	function init()
+	{
+		establishSocket();
+		
+		document.getElementById ('messageBtn').addEventListener('click', sendMsg,true);
+		
+	}
+	
+	function establishSocket()
+	{
+		
+		if ("WebSocket" in window)
+        {
+          alert("WebSocket is supported by your Browser!");
+    
+           ws = new WebSocket("ws://localhost:8000/socket/server.php");
+		  
+		   ws.onopen = function()
+     {
+        
+        ws.send("Message to send");
+        alert("Socket connection established. Connection status: " + this.readyState);
+     };
+	 
+     ws.onmessage = function (evt) 
+     { 
+        var received_msg = evt.data;
+        alert("Message is received...");
+     };
+     ws.onclose = function()
+     { 
+        
+        alert("Socket connection is now closed ! "); 
+     };
+	 
+	 ws.onerror = function(evt)
+	 {
+		 //  check to see if the readyState attribute's value is OPEN (1) or CLOSING (2), and if so, fire a simple event named error at the WebSocket object.
+		alert ('The following error occurred: ' + error);
+	 }
+		  
+        } else {
+     
+     alert("WebSocket is not supported by your browser!");
+  }
+	 
+	}
+	
+	function sendMsg() 
+	{
+		
+    var text = document.getElementById('message').value;
+    if(text=="")
+{
+        alert('Please enter a message');
+        return ;
+    }
+    try{
+        ws.send(text);
+      
+    } catch(exception){
+   	alert('Error:' + exception);
+    }	
+	}
+	
+	function closeConnection()
+	{  
+	
+        ws.close();
+		  
+     }
+	 
+	 function onkey(event)
+	 { 
+	 if(event.keyCode==13)
+	 { sendMsg(); 
+	 } 
+	 }
+    
+ </script>
+</head>
+<body>
+<h2>Solution 9-4: Using a WebSocket server with  the WebSocket API   </h2> 
+ 
+<input type="text" value="Insert a message to send" id="message" onkeypress="onkey(event)" /> <button id="messaggeBtn"> Send message ! </button>
+<p>&nbsp;</p>
+<p><a href="javascript:closeConnection()">Close socket connection</a></p>
+</body>
+</html>
+
+

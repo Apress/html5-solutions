@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+     Solution 5-2: Detecting Video support across browser
+    </title>
+
+<script type="text/javascript" src="js/modernizr-1.0.min.js"></script>
+
+  <style type="text/css">
+    body { background: #f7f7f7; color: black; text-align: center; }
+    .video #no-video,
+    .no-video #video { display: none; } 
+  </style>
+  
+  </head>
+  
+ <body>
+  
+<h1>Comtaste's Showreel</h1>
+
+  <div id="video"> 
+<h1> This is an HTML5 Video Element </h1> 
+    <video width="640"  height="360" 
+src="movie.mp4" autoplay poster="../img/Figure_5_3.png" />
+  
+  </div>
+
+  <div id="no-video" class="no-video">
+    <!-- Insert you code here for handling a video if the <video> tag is not supported -->
+<h1> This is not the HTML5 Video element </h1>
+<!-- fallback to Flash: -->
+	<object width="640" height="360" type="application/x-shockwave-flash" data="__FLASH__.SWF">
+		<!-- Firefox uses the `data` attribute above, IE/Safari uses the param below -->
+		<param name="movie" value="comtaste_showreel.SWF" />
+		<param name="flashvars" value="controlbar=over&amp;image=comtaste_showreel.JPG&amp;file=comtaste_showreel.mp4" />
+		<!-- fallback image. note the title field below, put the title of the video there -->
+		<img src="comtaste_showreel.JPG" width="640" height="360" 
+		     title="No video playback capabilities, please download the video below" />
+	</object>
+	
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+     Solution 5-3: Creating custom video controls
+    </title>
+    
+<style type="text/css">
+
+#video_container {
+	margin: 0;
+	padding: 0;
+}
+
+
+#time {
+	margin: 0;
+	padding: 5px;
+	width: 350px;
+	font-family: Helvetica, Arial, sans-serif
+	font-size: .7em;
+	color: #000000;
+	background-color: #ccc;
+}
+
+</style>
+
+<script type="text/javascript">
+
+var video;
+
+window.onload = function(){
+	
+	video = document.getElementsByTagName("video")[0];
+	
+	var btn_play = document.getElementById("btn_play");
+	
+	var btn_pause = document.getElementById("btn_pause");
+
+	var btn_mute = document.getElementById("btn_mute");
+	
+	var btn_volume = document.getElementById('volume');
+    
+	btn_play.addEventListener('click', doPlay, false);
+	
+	btn_pause.addEventListener('click', doPause, false);
+
+	btn_mute.addEventListener('click', doMute, false);
+	
+	video.addEventListener('timeupdate', updateTime, false);
+	
+	btn_volume.value = video.volume;
+    
+	btn_volume.addEventListener('change',function(e) {
+	
+			myVol= e.target.value;
+			
+			video.volume=myVol;
+			
+	
+	if (myVol==0) {
+				video.muted = true;
+				
+			} else {
+				
+				video.muted = false;
+				
+			}
+			return false;
+		}, true);
+
+	
+
+};
+
+function updateTime()
+{
+
+
+			var sec= video.currentTime;
+			var h = Math.floor(sec/3600);
+			sec=sec%3600;
+			var min =Math.floor(sec/60);
+			sec = Math.floor(sec%60);
+			
+			if (sec.toString().length < 2) sec="0"+sec;
+			if (min.toString().length < 2) min="0"+min;
+			
+			document.getElementById('time').innerHTML = h+":"+min+":"+sec;
+
+}
+
+
+function doPlay(){
+	if (video.paused){
+		video.play();
+	} else if (video.ended)
+	{
+	  video.currentTime=0;
+      video.play();
+	};
+};
+
+function doPause(){
+	if (video.play){
+		video.pause();
+	};
+};
+
+
+
+function doMute(){
+    document.getElementById('volume').value = 0;
+	video.muted = true;
+};
+
+
+</script>
+
+</head>
+
+<body>
+
+<div id="video_container">
+
+<video width="320" height="176" src="movie.mp4" autoplay />
+
+</div>
+
+<div id="video_controller">
+
+<button id="btn_play"> Play </button>
+
+<button id="btn_pause"> Pause </button>
+
+<input type="range" min="0" max="1" step="0.1" id="volume">
+
+<button id="btn_mute"> Mute </button>
+
+<label id="time">-:--:--</label>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.training h1 {
+	color:#e2a104;
+	margin:0 0 15px;
+	padding:0;
+}
+.training h2 {
+	color:#000000;
+	margin:40px 0 0;
+	padding:0;
+	line-height:50px;
+}
+.training h2 img{
+	vertical-align:middle;
+}
+.training p.trainingLink a, .training p.trainingLink a:visited, .training p.trainingLink a:link, .training p.trainingLink a:hover {
+	color:#000000 !important;
+	font-weight:bold;
+	background:transparent url(images/orange_bullet.gif) no-repeat 0 6px;
+	padding-left:12px;
+	font-size: 0.8em;
+}
+.training h3 {
+	color:#575757;
+	margin:15px 0 0 15px;
+	padding:0;
+	text-decoration:underline;
+	font-weight:normal;
+}
+.training h4 {
+	color:#DFB44B;
+	text-decoration:none;
+	font-weight:bold;
+}
+.training table {
+	background:#f2f2f2;
+	padding:10px;
+}
+.training td.caption {
+	font-weight:bold;
+	vertical-align:top;
+	width:75px;
+	color:#e2a104;
+}
+.training td.caption_schede {
+	font-weight:bold;
+	vertical-align:top;
+	width:200px;
+	color:#e2a104;
+}
+.training p {
+	margin:0;
+	padding:0;
+	font-size:0.9em;
+}

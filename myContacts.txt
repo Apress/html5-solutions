@@ -1,0 +1,3 @@
+m.casario@comtaste.com;Marco Casario; CTO - Comtaste
+m.ronchi@comtaste.com;Matteo Ronchi; Lead Developer - Comtaste
+r.mannella@comtaste.com;Raffaele Mannella; CEO - Comtaste

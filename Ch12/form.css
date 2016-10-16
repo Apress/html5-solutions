@@ -1,0 +1,44 @@
+
+#thisform label {
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:1.2em;
+font-weight: bold;
+color:#666666;
+}
+
+
+#password, #email {
+
+width: 200px;
+
+}
+
+
+
+	#thisform legend {
+
+
+		font-weight: bold;
+		font-size: 90%;
+
+		color: #666;
+		background: #eee;
+
+		border: 1px solid #ccc;
+
+		border-bottom-color: #999;
+
+		border-right-color: #999;
+
+		padding: 4px 10px;
+		
+
+		}
+
+	
+	#thisform fieldset {
+
+		border: 1px dotted #ff0000;
+		padding: 5px 20px 10px 10px;
+
+		}		

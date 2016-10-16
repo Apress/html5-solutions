@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+    <title>
+     Solution 12-3: Creating accessible form
+    </title>
+
+<link href="form.css" rel="stylesheet" />
+
+    </head>
+<body>
+
+<form id="thisform">
+ <fieldset name="signin">
+
+    <legend>This is a sign in form. Insert your email and password to access:</legend>
+
+ 
+
+  <p><label for="email" >Email:</label><br />
+
+  <input type="email" id="email" name="email" tabindex="1" autofocus /></p>
+  
+   <p><label for="password" accesskey="P" >Password:</label><br />
+
+  <input type="text" id="password" name="password" tabindex="2" /></p>
+  
+  <p><label for="name" accesskey="D" >Insert your birthday:</label><br />
+
+  <input type="date" id="date" name="date" tabindex="3" /></p>
+  
+  <p><input type="checkbox" id="remember" name="remember"   tabindex="4" />
+
+  <label for="remember">Remember this info?</label></p>
+
+  <p><input type="submit" value="submit" tabindex="5" /></p>
+</fieldset>
+
+</form>
+
+</body>
+</html>

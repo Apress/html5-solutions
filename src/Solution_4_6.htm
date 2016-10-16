@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+     Solution 4-6: Creating a Google's suggest-like autocomplete with the data list component
+    </title>
+  </head>
+
+  <body>
+  
+<form id=myForm>
+<fieldset>
+  <legend>Solution 4-6: Creating a Google's suggest-like autocomplete with the data list component</legend>
+  
+     <label> Enter your favorite movies:<br />
+  <input type="text" name="movies" list="movies">
+  <datalist id="movies">
+  <label>
+    or select one from the list:
+  <select name="movies">  
+   <option value="Star Wars">
+   <option value="The Godfather">
+   <option value="Good fellas">
+   </select>
+   </label>
+  </datalist>
+ </label>
+ 
+ <p>
+ 
+  <label> This is your favourite movie: 
+  <output name="myOutput" onforminput="this.value=movies.value" />
+  </label>  
+
+ </p>
+</fieldset>
+</form>
+
+</body>
+</html>
